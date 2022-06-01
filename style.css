@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+}
+button{
+    cursor: pointer;
+}
+header{
+    font-family: cursive;
+    font-size: small;
+}
+#ul{
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+    display: flex;
+    list-style-type: none;
+    border-color: white;
+  
+}
+.list{
+    padding:10px;
+    display: flex;
+    cursor: pointer;
+}
+
+
+header h2{
+    text-align: center;
+    font-size:30px;
+}
+
+footer ul{
+    display: flex;
+    list-style-type: none;
+}
+footer ul li{
+    padding:0px 10px;
+    
+}
+.showcart{
+    display: none;
+}
