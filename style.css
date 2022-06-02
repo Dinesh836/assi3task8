@@ -1,42 +1,93 @@
-body{
+body {
     margin: 0;
 }
-button{
+
+button {
     cursor: pointer;
 }
-header{
+
+header {
     font-family: cursive;
     font-size: small;
 }
-#ul{
+
+#ul {
     margin: 0;
     padding: 0;
     height: 10vh;
     display: flex;
     list-style-type: none;
     border-color: white;
-  
+
 }
-.list{
-    padding:10px;
+
+.list {
+    padding: 10px;
     display: flex;
     cursor: pointer;
 }
-
-
-header h2{
-    text-align: center;
-    font-size:30px;
+.cartspan{
+    position: absolute;
+    top: 7px;
+    right: 10px;
 }
 
-footer ul{
+header h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+footer ul {
     display: flex;
     list-style-type: none;
 }
-footer ul li{
-    padding:0px 10px;
-    
+
+footer ul li {
+    padding: 0px 10px;
+
 }
-.showcart{
+
+.showcart {
     display: none;
+    position: fixed;
+    background-color: lightgreen;
+    border-radius: 10px;
+    top: 60px;
+    right: 10px;
+}
+
+.cancel{
+    position: fixed;
+    border-radius: 50%;
+    top: 60px;
+    right: 10px;
+}
+.notification {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.son {
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.cart-img{
+    width:80px;
+    border-radius:8%;
+    margin-right:20px;
+}
+#cart{
+    margin:0px;
+    position:fixed;
+    top:50px;
+    height: 95%;
+    right:0;
+    background-color:rgb(255, 255, 255);
+    border:1px solid rgb(177, 103, 103);
+    min-height:50vh;
+}
+#value{
+    width: 10px;
 }
