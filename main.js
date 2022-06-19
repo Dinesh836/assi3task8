@@ -73,7 +73,7 @@ parentContainer.addEventListener('click', (e)=>{
 
 window.addEventListener("DOMContentLoaded", ()=>{
     axios.get("http://localhost:3000/products").then((data)=>{
-        console.log(data)
+       // console.log(data)
         if(data.request.status==200){
             const products=data.data.products;
             const singleProduct=document.getElementById('products')
@@ -83,14 +83,37 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     <h1>${product.title}</h1>
                     <img src="${product.imageUrl}" alt="" />
                     <h2>${product.price}</h2>
-                    <button>ADD TO CART</button>
+                    <button onclick='addToCart(${product.id})'>ADD TO CART</button>
                     <hr>
                 </div>`
                 singleProduct.innerHTML += productHtml;
             })
         }
     })
+   
 })
+
+function addToCart(productId){
+    axios.post('http://localhost:3000/cart',{productId : productId})
+    .then((res)=>{
+        //console.log(res)
+        if(res.status==200){
+            notifyUSer(res.data.message)
+        }
+    })
+    .catch(err=> console.log(err))
+}
+
+function notifyUSer(message){
+    const notif=document.querySelector('.notification');
+        const son=document.createElement('div');
+        son.classList.add('son');
+        son.innerText=`${message}`;
+        notif.appendChild(son);
+        setTimeout(()=>{
+            son.remove();
+        }, 2000);
+}
 
 
 
