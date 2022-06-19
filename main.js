@@ -13,7 +13,7 @@ parentContainer.addEventListener('click', (e)=>{
         let total_cart_price=document.querySelector('#total-value').innerText;
     
         if(document.querySelector(`#in-cart-${id}`)){
-            alert('this item is already added to cart ');
+            alert(`${name} is already added to cart `);
             return;
         }
     
@@ -69,6 +69,27 @@ parentContainer.addEventListener('click', (e)=>{
         e.target.parentNode.parentNode.remove()
     }
     
+})
+
+window.addEventListener("DOMContentLoaded", ()=>{
+    axios.get("http://localhost:3000/products").then((data)=>{
+        console.log(data)
+        if(data.request.status==200){
+            const products=data.data.products;
+            const singleProduct=document.getElementById('products')
+            products.forEach(product=>{
+                const productHtml=
+               ` <div>
+                    <h1>${product.title}</h1>
+                    <img src="${product.imageUrl}" alt="" />
+                    <h2>${product.price}</h2>
+                    <button>ADD TO CART</button>
+                    <hr>
+                </div>`
+                singleProduct.innerHTML += productHtml;
+            })
+        }
+    })
 })
 
 

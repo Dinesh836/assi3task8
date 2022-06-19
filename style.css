@@ -91,3 +91,11 @@ footer ul li {
 #value{
     width: 10px;
 }
+
+hr{
+    width: 300px;
+}
+.prodimg {
+    width:200px;
+    height: 200px;
+}
