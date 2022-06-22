@@ -74,7 +74,7 @@ footer ul li {
 }
 
 .cart-img{
-    width:80px;
+    width:40px;
     border-radius:8%;
     margin-right:20px;
 }
@@ -98,4 +98,14 @@ hr{
 .prodimg {
     width:200px;
     height: 200px;
+}
+ #cartAlign{
+    display: inline;
+}
+.products{
+    font-family: arial;
+}
+
+a{
+    text-decoration: none;
 }
